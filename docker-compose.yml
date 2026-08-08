@@ -1,0 +1,33 @@
+
+services:
+  database:
+    image: mongo:latest
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: .
+    container_name: node_orchestrator
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://database:27017/predictive_maintenance
+      - PYTHON_SERVICE_URL=http://python-service:8000/predict
+    depends_on:
+      - database
+      - python-service
+
+  # Placeholder for Person 4's microservice
+  python-service:
+    image: python:3.10-slim
+    container_name: uvicorn_qsvm_service
+    # Command keeps the container alive until Person 4 mounts their code
+    command: tail -f /dev/null 
+    ports:
+      - "8000:8000"
+
+volumes:
+  mongo_data:
