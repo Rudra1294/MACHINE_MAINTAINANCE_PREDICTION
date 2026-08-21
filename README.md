@@ -1,4 +1,3 @@
-```markdown
 # OptiMaintain: Predictive Equipment Maintenance & Workforce Management
 
 OptiMaintain is a web-based predictive maintenance and technician dispatching platform designed to monitor equipment diagnostics, predict machinery failures, and streamline workforce scheduling to minimize industrial operational downtime[cite: 3].
@@ -94,12 +93,3 @@ Open [http://localhost:3000](http://localhost:3000) to view the application in y
 * **Sarthak** – **Database, Backend & DevOps**: Designed database schemas, developed backend API services, and configured containerization using Docker.
 * **Rudra** – **Formulation, Cloud Integration & Circuit Optimization**: Handled problem formulation, cloud architecture deployment, and optimization logic.
 * **Tushar** – **Data Preprocessing, QSVM & Microservices**: Built data preprocessing pipelines, developed QSVM machine learning models, and created the FastAPI prediction microservice.
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-```
-
-```
