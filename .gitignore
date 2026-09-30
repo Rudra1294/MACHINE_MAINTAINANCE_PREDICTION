@@ -1,6 +1,9 @@
-node_modules
-dist
-dist-isolation
+node_modules/
+dist/
+dist-isolation/
 .env
 .env.local
 .DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

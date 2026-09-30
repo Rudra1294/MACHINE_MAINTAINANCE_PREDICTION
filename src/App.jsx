@@ -8,6 +8,7 @@ import DatasetBanner from './components/DatasetBanner';
 import DiagnosticsTab from './components/tabs/DiagnosticsTab';
 import MaintenanceTab from './components/tabs/MaintenanceTab';
 import RegistryTab from './components/tabs/RegistryTab';
+import AddMachineTab from './components/tabs/AddMachineTab';
 import CalendarTab from './components/tabs/CalendarTab';
 import HistoryTab from './components/tabs/HistoryTab';
 import TechniciansTab from './components/tabs/TechniciansTab';
@@ -149,6 +150,10 @@ export default function App() {
         m.machine_id === machineId ? { ...m, status: nextStatus } : m
       ));
     }
+  };
+
+  const handleAddMachine = (newMachine) => {
+    setAllMachines(prev => [newMachine, ...prev]);
   };
 
   const handleLogout = () => {
@@ -327,6 +332,12 @@ export default function App() {
               allMachines={allMachines}
               maintenanceQueue={maintenanceQueue}
               executeDiagnostic={executeDiagnostic}
+            />
+          )}
+
+          {activeTab === 'addMachine' && (
+            <AddMachineTab 
+              onAddMachine={handleAddMachine}
             />
           )}
 

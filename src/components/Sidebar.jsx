@@ -4,6 +4,7 @@ import {
   LayoutDashboard, 
   Hammer, 
   Activity, 
+  PlusSquare,
   CalendarDays, 
   History, 
   Users,
@@ -97,6 +98,19 @@ export default function Sidebar({
             <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">
               {registryCount}
             </span>
+          </button>
+
+          {/* NEW: Add Machine Tab Button Below Registry */}
+          <button
+            onClick={() => setActiveTab('addMachine')}
+            className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-xs font-semibold transition ${
+              activeTab === 'addMachine'
+                ? 'bg-teal-600 text-white shadow-lg shadow-teal-600/20'
+                : 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-200'
+            }`}
+          >
+            <PlusSquare className="w-4 h-4" />
+            <span>Add Machine</span>
           </button>
 
           <button

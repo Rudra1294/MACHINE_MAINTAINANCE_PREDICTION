@@ -1,19 +1,12 @@
 import React from 'react';
 import { Clock, Zap, Server } from 'lucide-react';
 
-export default function Header({ 
-  activeTab, 
-  machineIdsInput, 
-  setMachineIdsInput, 
-  executeDiagnostic, 
-  loading 
-}) {
-  // Add technicians key inside src/components/Header.jsx:
 const titles = {
   diagnostics: 'Plant Maintenance Diagnostics',
   maintenance: 'Active Maintenance Queue',
   technicians: 'Technician Workforce & Resource Allocation',
   registry: 'Machinery Registry Catalog',
+  addMachine: 'Onboard New Machinery Unit',
   calendar: 'Maintenance Calendar & Timetable',
   history: 'Completed Maintenance History Log'
 };
@@ -23,18 +16,26 @@ const subtitles = {
   maintenance: 'Units currently shut down or undergoing physical technician repair.',
   technicians: 'Manage plant engineers, duty shifts, domain specialties, and active field assignments.',
   registry: 'Complete inventory of all 10,000 dataset observations and real-time parameters.',
+  addMachine: 'Manually register custom plant equipment telemetry and configure failure baselines.',
   calendar: 'Schedule matrix for preventive maintenance slots and assigned specialists.',
   history: 'Historical archive of resolved machinery failures and preventative service logs.'
 };
 
+export default function Header({ 
+  activeTab, 
+  machineIdsInput, 
+  setMachineIdsInput, 
+  executeDiagnostic, 
+  loading 
+}) {
   return (
     <header className="sticky top-0 bg-slate-950/80 backdrop-blur border-b border-slate-800 px-8 py-4 flex justify-between items-center z-10">
       <div>
         <h1 className="text-lg font-bold text-slate-100 capitalize">
-          {titles[activeTab]}
+          {titles[activeTab] || 'Plant Maintenance Diagnostics'}
         </h1>
         <p className="text-xs text-slate-400 mt-0.5">
-          {subtitles[activeTab]}
+          {subtitles[activeTab] || ''}
         </p>
       </div>
 
